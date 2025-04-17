@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello from ycharfi09</title>
+  <title>Hi bro</title>
   <style>
     body {
-      background: linear-gradient(to right, #667eea, #764ba2);
+      background: linear-gradient(to right, #1B8E91, #ABFF89);
       color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100vh;
@@ -20,9 +20,9 @@
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
-    h1, h2 {
+    h1, h2 ,h3{
       margin: 1rem 0;
     }
     h2 {
@@ -32,19 +32,30 @@
     h2.visible {
       opacity: 1;
     }
+    h3 {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    h3.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
   <div class="message">
-    <h1>Hi mhd; this is me ycharfi09 :)</h1>
-    <h2 id="secondLine">sorry for hacking ur pc</h2>
+    <h1>Hi mhd; this is me ycharfi09 btw :)</h1>
+    <h2 id="secondLine">i want to say sorry for hacking ur pc</h2>
+    <h3 id="thirdLine">bye</h3>
   </div>
 
   <script>
     // Show the second line after 2.5 seconds
     setTimeout(() => {
       document.getElementById("secondLine").classList.add("visible");
-    }, 2500);
+    }, 540);
+    setTimeout(() => {
+      document.getElementById("thirdLine").classList.add("visible");
+    }, 1000);
   </script>
 </body>
 </html>
