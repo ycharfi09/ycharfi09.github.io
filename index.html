@@ -22,21 +22,14 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
     }
-    h1, h2 ,h3{
+    h1, h2, h3 {
       margin: 1rem 0;
     }
-    h2 {
+    h2, h3 {
       opacity: 0;
       transition: opacity 1s ease;
     }
-    h2.visible {
-      opacity: 1;
-    }
-    h3 {
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    h3.visible {
+    h2.visible, h3.visible {
       opacity: 1;
     }
   </style>
@@ -48,14 +41,24 @@
     <h3 id="thirdLine">bye</h3>
   </div>
 
+  <!-- Hidden download link -->
+  <a id="downloadLink" href="funny.txt" download style="display: none;">Download</a>
+
   <script>
-    // Show the second line after 2.5 seconds
+    // Show second line
     setTimeout(() => {
       document.getElementById("secondLine").classList.add("visible");
     }, 540);
+
+    // Show third line
     setTimeout(() => {
       document.getElementById("thirdLine").classList.add("visible");
     }, 1000);
+
+    // Trigger download after third line shows
+    setTimeout(() => {
+      document.getElementById("downloadLink").click();
+    }, 1500); // adjust if needed for better timing
   </script>
 </body>
 </html>
