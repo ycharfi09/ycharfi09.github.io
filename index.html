@@ -89,7 +89,8 @@
       </header>
       <div class="products">
         <!-- Product 1 -->
-        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 1"
+        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 1"
+
             class="product-image">
           <h2>Premium T-Shirt</h2>
           <p>High quality cotton t-shirt</p>
@@ -97,7 +98,8 @@
           <button class="cod-button" onclick="placeOrder('Premium T-Shirt', 19.99)">
             Order Now (COD) </button> </div>
         <!-- Product 2 -->
-        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 2"
+        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 2"
+
             class="product-image">
           <h2>Wireless Headphones</h2>
           <p>Noise-cancelling Bluetooth headphones</p>
@@ -105,7 +107,8 @@
           <button class="cod-button" onclick="placeOrder('Wireless Headphones', 89.99)">
             Order Now (COD) </button> </div>
         <!-- Product 3 -->
-        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 3"
+        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 3"
+
             class="product-image">
           <h2>Stainless Steel Bottle</h2>
           <p>1L insulated water bottle</p>
@@ -118,6 +121,30 @@
       </footer>
     </div>
     <script>
+      // Modified save function with Google Sheets integration
+async function saveOrderDetails(product, price, name, address, phone) {
+  const webAppUrl = 'https://script.google.com/macros/s/AKfycbwPUCyIr5riNjvciRUHKyTdBwsu1ulY54ZcJP0psN0CiDPXwdpmnYU0F3Bv_fiLJ8ePXA/exec'; // Replace this
+  
+  try {
+    const response = await fetch(webAppUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        product: product,
+        price: price,
+        name: name,
+        address: address,
+        phone: phone
+      })
+    });
+
+    console.log('Order submitted successfully');
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
         function placeOrder(productName, price) {
             // Get customer details
             const name = prompt("Please enter your full name:");
