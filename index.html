@@ -1,64 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hi bro</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #1B8E91, #ABFF89);
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .message {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-    h1, h2, h3 {
-      margin: 1rem 0;
-    }
-    h2, h3 {
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    h2.visible, h3.visible {
-      opacity: 1;
-    }
-  </style>
-</head>
-<body>
-  <div class="message">
-    <h1>Hi mhd; this is me ycharfi09 btw :)</h1>
-    <h2 id="secondLine">i want to say sorry for hacking ur pc</h2>
-    <h3 id="thirdLine">bye</h3>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Store</title>
+    <!-- Snipcart CSS -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .product {
+            border: 1px solid #ddd;
+            margin: 1rem;
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .snipcart-add-item {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .snipcart-add-item:hover {
+            background: #45a049;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Store</h1>
+    </header>
+    <nav> <a href="index.html">Home</a> <a href="#">Products</a> <a href="#">About</a>
+      <a href="#">Contact</a> <button class="snipcart-checkout" style="float: right; background: none; border: none; color: white; cursor: pointer;">
+        🛒 <span class="snipcart-items-count">0</span> items </button> </nav>
+    <div class="products">
+      <!-- Product 1 -->
+      <div class="product">
+        <h3>Premium T-Shirt</h3>
+        <img src="product.jpg" alt="T-Shirt">
+        <p>High quality cotton t-shirt with premium print</p>
+        <p><strong>19.99</strong></p>
+        <button class="snipcart-add-item" data-item-id="tshirt-01" data-item-price="19.99"
 
-  <!-- Hidden download link -->
-  <a id="downloadLink" href="armor_trim_abilities_tool.zip" download style="display: none;">Download</a>
+          data-item-name="Premium T-Shirt" data-item-url="https://yourusername.github.io"
 
-  <script>
-    // Show second line
-    setTimeout(() => {
-      document.getElementById("secondLine").classList.add("visible");
-    }, 540);
+          data-item-description="High quality cotton t-shirt"> Add to Cart </button>
+      </div>
+      <!-- Product 2 -->
+      <div class="product">
+        <h3>Classic Mug</h3>
+        <img src="https://via.placeholder.com/200" alt="Mug">
+        <p>Ceramic coffee mug with handle</p>
+        <p><strong>9.99</strong></p>
+        <button class="snipcart-add-item" data-item-id="mug-01" data-item-price="9.99"
 
-    // Show third line
-    setTimeout(() => {
-      document.getElementById("thirdLine").classList.add("visible");
-    }, 1000);
+          data-item-name="Classic Mug" data-item-url="https://yourusername.github.io"
 
-    // Trigger download after third line shows
-    setTimeout(() => {
-      document.getElementById("downloadLink").click();
-    }, 1500); // adjust if needed for better timing
-  </script>
-</body>
+          data-item-description="Ceramic coffee mug with handle"> Add to
+          Cart </button> </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <h3>Notebook</h3>
+        <img src="https://via.placeholder.com/200" alt="Notebook">
+        <p>200-page lined notebook</p>
+        <p><strong>12.99</strong></p>
+        <button class="snipcart-add-item" data-item-id="notebook-01" data-item-price="12.99"
+
+          data-item-name="Notebook" data-item-url="https://yourusername.github.io"
+
+          data-item-description="200-page lined notebook"> Add to Cart </button>
+      </div>
+    </div>
+    <footer>
+      <p>© 2024 My Online Store. All rights reserved.</p>
+    </footer>
+    <!-- Snipcart REQUIRED Configuration -->
+    <div id="snipcart" data-api-key="YWVlZDUxYzktNzhlMC00YmEzLWIyOGEtYTI1NmZhNGE0ZmE4NjM4ODEzNDg0MTkzNDQ0MTUy
+" hidden=""></div>
+    <!-- Snipcart JavaScript -->
+    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+  </body>
 </html>
