@@ -84,8 +84,8 @@
 
           data-item-name="Premium T-Shirt" data-item-url="https://yourusername.github.io"
 
-          data-item-description="High quality cotton t-shirt"> Add to Cart </button>
-      </div>
+          data-item-description="High quality cotton t-shirt"> Add to
+          Cart </button> </div>
       <!-- Product 2 -->
       <div class="product">
         <h3>Classic Mug</h3>
@@ -96,8 +96,8 @@
 
           data-item-name="Classic Mug" data-item-url="https://yourusername.github.io"
 
-          data-item-description="Ceramic coffee mug with handle"> Add to
-          Cart </button> </div>
+          data-item-description="Ceramic coffee mug with handle"> Add to Cart </button>
+      </div>
       <!-- Product 3 -->
       <div class="product">
         <h3>Notebook</h3>
