@@ -3,121 +3,162 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Online Store</title>
-    <!-- Snipcart CSS -->
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css">
-    <!-- Custom CSS -->
+    <title>COD Store - Pay on Delivery</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
+            padding: 20px;
+            background-color: #f5f5f5;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         header {
-            background: #333;
-            color: white;
-            padding: 1rem;
             text-align: center;
-        }
-        nav {
-            background: #444;
-            padding: 0.5rem;
-        }
-        nav a {
+            padding: 2rem;
+            background-color: #2c3e50;
             color: white;
-            margin: 0 1rem;
-            text-decoration: none;
+            margin-bottom: 2rem;
+            border-radius: 5px;
         }
+
         .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             padding: 1rem;
         }
-        .product {
-            border: 1px solid #ddd;
-            margin: 1rem;
-            padding: 1rem;
-            width: 250px;
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
         }
-        .product img {
+
+        .product-image {
             max-width: 100%;
-            height: auto;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
         }
-        .snipcart-add-item {
-            background: #4CAF50;
+
+        .cod-button {
+            background-color: #27ae60;
             color: white;
+            padding: 0.8rem 1.5rem;
             border: none;
-            padding: 0.5rem 1rem;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 1rem;
             margin-top: 1rem;
+            transition: background-color 0.3s;
         }
-        .snipcart-add-item:hover {
-            background: #45a049;
+
+        .cod-button:hover {
+            background-color: #219a52;
         }
+
         footer {
-            background: #333;
-            color: white;
             text-align: center;
-            padding: 1rem;
-            margin-top: 1rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 5px;
         }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Welcome to My Store</h1>
-    </header>
-    <nav> <a href="index.html">Home</a> <a href="#">Products</a> <a href="#">About</a>
-      <a href="#">Contact</a> <button class="snipcart-checkout" style="float: right; background: none; border: none; color: white; cursor: pointer;">
-        🛒 <span class="snipcart-items-count">0</span> items </button> </nav>
-    <div class="products">
-      <!-- Product 1 -->
-      <div class="product">
-        <h3>Premium T-Shirt</h3>
-        <img src="https://via.placeholder.com/200" alt="T-Shirt">
-        <p>High quality cotton t-shirt with premium print</p>
-        <p><strong>19.99</strong></p>
-        <button class="snipcart-add-item" data-item-id="tshirt-01" data-item-price="19.99"
-
-          data-item-name="Premium T-Shirt" data-item-url="https://yourusername.github.io"
-
-          data-item-description="High quality cotton t-shirt"> Add to
-          Cart </button> </div>
-      <!-- Product 2 -->
-      <div class="product">
-        <h3>Classic Mug</h3>
-        <img src="https://via.placeholder.com/200" alt="Mug">
-        <p>Ceramic coffee mug with handle</p>
-        <p><strong>9.99</strong></p>
-        <button class="snipcart-add-item" data-item-id="mug-01" data-item-price="9.99"
-
-          data-item-name="Classic Mug" data-item-url="https://yourusername.github.io"
-
-          data-item-description="Ceramic coffee mug with handle"> Add to Cart </button>
+    <div class="container">
+      <header>
+        <h1>COD Store</h1>
+        <p>Pay When You Receive Your Order</p>
+      </header>
+      <div class="products">
+        <!-- Product 1 -->
+        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 1"
+            class="product-image">
+          <h2>Premium T-Shirt</h2>
+          <p>High quality cotton t-shirt</p>
+          <p><strong>$19.99</strong></p>
+          <button class="cod-button" onclick="placeOrder('Premium T-Shirt', 19.99)">
+            Order Now (COD) </button> </div>
+        <!-- Product 2 -->
+        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 2"
+            class="product-image">
+          <h2>Wireless Headphones</h2>
+          <p>Noise-cancelling Bluetooth headphones</p>
+          <p><strong>$89.99</strong></p>
+          <button class="cod-button" onclick="placeOrder('Wireless Headphones', 89.99)">
+            Order Now (COD) </button> </div>
+        <!-- Product 3 -->
+        <div class="product-card"> <img src="https://via.placeholder.com/300" alt="Product 3"
+            class="product-image">
+          <h2>Stainless Steel Bottle</h2>
+          <p>1L insulated water bottle</p>
+          <p><strong>$24.99</strong></p>
+          <button class="cod-button" onclick="placeOrder('Stainless Steel Bottle', 24.99)">
+            Order Now (COD) </button> </div>
       </div>
-      <!-- Product 3 -->
-      <div class="product">
-        <h3>Notebook</h3>
-        <img src="https://via.placeholder.com/200" alt="Notebook">
-        <p>200-page lined notebook</p>
-        <p><strong>12.99</strong></p>
-        <button class="snipcart-add-item" data-item-id="notebook-01" data-item-price="12.99"
-
-          data-item-name="Notebook" data-item-url="https://yourusername.github.io"
-
-          data-item-description="200-page lined notebook"> Add to Cart </button>
-      </div>
+      <footer>
+        <p>© 2024 COD Store. Pay when you receive your order!</p>
+      </footer>
     </div>
-    <footer>
-      <p>© 2024 My Online Store. All rights reserved.</p>
-    </footer>
-    <!-- Snipcart REQUIRED Configuration -->
-    <div id="snipcart" data-api-key="YWVlZDUxYzktNzhlMC00YmEzLWIyOGEtYTI1NmZhNGE0ZmE4NjM4ODEzNDg0MTkzNDQ0MTUy
-" hidden=""></div>
-    <!-- Snipcart JavaScript -->
-    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <script>
+        function placeOrder(productName, price) {
+            // Get customer details
+            const name = prompt("Please enter your full name:");
+            if (!name) return;
+
+            const address = prompt("Delivery address:");
+            if (!address) return;
+
+            const phone = prompt("Contact phone number:");
+            if (!phone) return;
+
+            // Confirm order
+            const confirmation = confirm(
+                `Confirm COD Order:\n
+                Product: ${productName}\n
+                Price: $${price}\n
+                Name: ${name}\n
+                Address: ${address}\n
+                Phone: ${phone}\n\n
+                Click OK to confirm your order.`
+            );
+
+            if (confirmation) {
+                alert("Thank you! Your order has been placed.\nWe will contact you shortly to confirm delivery.");
+                saveOrderDetails(productName, price, name, address, phone);
+            }
+        }
+
+        // Optional: Save orders to Google Sheets
+        function saveOrderDetails(product, price, name, address, phone) {
+            // You can connect this to Google Apps Script
+            // See: https://github.com/jamiewilson/form-to-google-sheets
+            console.log('Order Details:', {
+                product,
+                price,
+                customer: name,
+                address,
+                phone,
+                date: new Date().toISOString()
+            });
+        }
+    </script>
   </body>
 </html>
